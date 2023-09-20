@@ -16,6 +16,32 @@ app.get('/bananas', (req, res) =>
 app.get('/fruit/apples', (req, res) => 
 
   res.send('hello world, this is apples ')); 
+
+let contacts = [];
+
+app.post('/contacts', (req, res) => { 
+
+        const contact = req.body; 
+    
+       
+    
+     
+    
+        console.log(contact) // to check what was received 
+    
+        
+    
+        contacts.push(contact); 
+    
+     
+    
+        res.send ('contact has been added to the database'); 
+    
+        console.log(`contact name is ${contact.name} number of contacts is ${contacts.length}`); 
+    
+     
+    
+    });
  
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

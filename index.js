@@ -15,12 +15,17 @@ app.get('/bananas', (req, res) =>
 
 app.get('/fruit/apples', (req, res) => 
 
-  res.send('hello world, this is apples ')); 
+  res.send('hello world, this is apples '));
 
-app.use(express.json());
+app.get('/rage', (req, res) => 
+
+  res.send('hello world, why wont this work! '));
+
+
 let contacts = [];
 
-app.use(express.json());
+app.use(express.json()); 
+
 app.post('/contacts', (req, res) => { 
 
         const contact = req.body; 
@@ -41,9 +46,25 @@ app.post('/contacts', (req, res) => {
     
         console.log(`contact name is ${contact.name} number of contacts is ${contacts.length}`); 
     
-     
+    app.get('/contacts', (req, res) => { 
+
+            res.send(contacts); 
+        
+        }) 
+
+        app.get('/contacts/:id', (req,res) => { 
+
+ 
+
+                 let id = req.params.id; 
+            
+                  res.json(contacts[id]); 
+            
+              }) 
     
     });
+
+    
  
     
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

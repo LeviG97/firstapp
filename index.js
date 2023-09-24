@@ -70,9 +70,9 @@ app.post('/contacts', (req, res) => {
 
     console.log(`removing contact ${contact[id].name}`) 
 
-    contact.splice(req.params.id, 1); 
+    contacts.splice(req.params.id, 1); 
 
-    res.send(contact); 
+    res.send(contacts); 
 
  
 

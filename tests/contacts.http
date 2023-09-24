@@ -16,3 +16,7 @@ content-type: application/json
   "email": "jdoe123@gmail.com"
 }
 
+###
+### DELETE Request for the the 1st contact 
+## Expected result is ........
+DELETE http://localhost:3000/contacts/0 HTTP/1.1
